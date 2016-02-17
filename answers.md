@@ -67,4 +67,31 @@
 ### Set 5
 
 1. Color, direction, location
-2. South of 0(North), and color of red
+2. Direction of 0(North), and color of red
+3. So the class can be directly changed more easily.
+4. Can't put itself into a grid twice, can't remove itself twice, but it can be placed, removed, then put back. It just works because it doesn't break it.
+5. Run the turn() method twice.
+
+### Set 6
+
+1. ``` java
+Grid<Actor> gr = getGrid();
+if (gr == null)
+  return false;
+```
+2. ``` java
+Actor neighbor = gr.get(next);
+return (neighbor == null) || (neighbor instanceof Flower);
+```
+3. getGrid(); Just so the bug can access the grid and its squares.
+
+4. getLocation(); getAdjacentLocation(); So the bug can access its adjacent location to see if it can move there.
+
+5. (neighbor == null) || (neighbor instanceof Flower);
+
+## Part 4
+
+### Set 7
+
+1. getActors(); processActors(); getMoveLocations(); selectMoveLocation(); makeMove();
+2. 
