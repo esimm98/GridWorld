@@ -84,14 +84,34 @@ Actor neighbor = gr.get(next);
 return (neighbor == null) || (neighbor instanceof Flower);
 ```
 3. getGrid(); Just so the bug can access the grid and its squares.
-
 4. getLocation(); getAdjacentLocation(); So the bug can access its adjacent location to see if it can move there.
-
-5. (neighbor == null) || (neighbor instanceof Flower);
+5. getGrid and getLocation are invoked
+6. move() will return false from canMove(). If something goes wrong, it will just move off the screen.
+7. You could use getLocation() repeatedly, but that would just make the code messier.
+8. Because the flower color comes from the bug actor
+9. It does, the bug puts flowers into a space after it has moved from it
+10. flower.putSelfInGrid(gr, loc)
+11. It calls the turn method 4 times
 
 ## Part 4
 
 ### Set 7
 
 1. getActors(); processActors(); getMoveLocations(); selectMoveLocation(); makeMove();
-2. 
+2. The critters all getActors(), processActors(), getMoveLocations(),selectMoveLocation(), and makeMove()
+3. No they shouldn't override getActors(). Every critter should return the actors around it in the exact same way, there's no need to change it.
+4. It can examine, move, or eat an actor.
+5. getLocation finds the current location of the actor, getMoveLocation finds where to move next, and move physically moves the actor
+6. Because Critter just inherits its constructor from the bug class.
+
+### Set 8
+
+1. Because ChameleonCritter changes its makeMove method to simply turn and not move to the location. It also processes the actors differently, just changing its color instead of remove the actor.
+2. So the ChameleonCritter can add a turn to the method, then use the parent makeMove method like normal to add to its action.
+3. Override the makeMove method once more, and as the Chameleon moves, place the flower in that spot.
+4. Because the Chameleon doesn't need to change the getActors() method. It looks at its surrounding actors the same way as any other actors.
+5. The getLocation() method is contained in the general actor class.
+6. By using the getGrid() method from the general Actor class.
+
+### Set 9
+
