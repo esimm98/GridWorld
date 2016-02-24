@@ -115,3 +115,10 @@ return (neighbor == null) || (neighbor instanceof Flower);
 
 ### Set 9
 
+1. Because the CrabCritter uses the processActors method the same way as the other critters, unlike the Chameleon which had to change its color.
+2. A CrabCritter will randomly move either left or right, then check the 3 spaces in front of it for another actor. And if it's not another critter or a rock it will eat the actor.
+3. getLocationsInDirections is used because the CrabCritter has to check the locations in multiple directions, not just directly in front of it.
+4. (4, 4), (4, 5), and (4, 6)
+5. They both only move when their possible moving spaces are open, and one space at a time. But Crabs only move sideways and turn 90 degrees to find an open space, while other Critters only move forward, turning 45 degrees at a time to find an open direction.
+6. By checking the spaces on either side of it horizontally to see if it can move, otherwise it turns.
+7. Because all Critters have it built in that they don't remove other Critters from the grid.
