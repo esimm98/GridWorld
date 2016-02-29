@@ -5,13 +5,11 @@ import info.gridworld.grid.*;
 
 import java.util.ArrayList;
 
-public class RockHound extends Critter {
+public class KingCrab extends CrabCritter {
 	
 	public void processActors(ArrayList<Actor> actors) {
 		for (Actor a : actors) {
-			if (a instanceof Rock) {
-				a.removeSelfFromGrid();
-			}
+			
 		}
 	}
 	
